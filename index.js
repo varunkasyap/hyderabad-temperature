@@ -1,5 +1,4 @@
 
-// Data
 const data = [
     { year: 1993, jan: 23.786, feb: 25.062, mar: 29.385, apr: 32.062, may: 33.809, jun: 30.877, jul: 27.677, aug: 26.6, sep: 26.777, oct: 26.732, nov: 24.485, dec: 21.308 },
     { year: 1994, jan: 23.608, feb: 26.285, mar: 30.562, apr: 31.209, may: 33.855, jun: 29.323, jul: 26.577, aug: 26.277, sep: 27.131, oct: 26.231, nov: 23.162, dec: 21.186 },
@@ -13,11 +12,11 @@ const data = [
     { year: 2002, jan: 23.608, feb: 26.339, mar: 30.339, apr: 33.285, may: 33.354, jun: 29.3, jul: 28.2, aug: 25.9, sep: 27.177, oct: 26.832, nov: 23.986, dec: 23.262 }
 ];
 
-// Selectors
+
 const yearSelect = document.getElementById('year-select');
 const chartContainer = d3.select('#chart-container');
 
-// Function to draw chart
+
 function drawChart(selectedYear) {
     const selectedData = data.find(d => d.year === selectedYear);
 
@@ -86,10 +85,10 @@ function drawChart(selectedYear) {
         .text(`Average Temperature in ${selectedYear}`);
 }
 
-// Initial draw
-drawChart(1993);
 
-// Event listener for dropdown change
+drawChart(1993); //initial drawing
+
+
 yearSelect.addEventListener('change', function () {
     const selectedYear = parseInt(this.value);
     drawChart(selectedYear);
